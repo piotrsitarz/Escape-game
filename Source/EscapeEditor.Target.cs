@@ -10,5 +10,8 @@ public class EscapeEditorTarget : TargetRules
 		Type = TargetType.Editor;
 
 		ExtraModuleNames.AddRange( new string[] { "Escape" } );
-	}
+
+        bUseUnityBuild = false;
+        bUsePCHFiles = false;
+    }
 }
