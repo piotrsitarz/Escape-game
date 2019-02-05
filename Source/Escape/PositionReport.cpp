@@ -20,7 +20,9 @@ void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
+	FString ObjectName = GetOwner()->GetName();
+	FString ObjectPosition = GetOwner()->GetTransform().GetLocation().ToString();
+	UE_LOG(LogTemp, Warning, TEXT("%s is at position %s"), *ObjectName, *ObjectPosition);
 	
 }
 
@@ -29,7 +31,4 @@ void UPositionReport::BeginPlay()
 void UPositionReport::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	FString ObjectName = GetOwner()->GetName();
-	FString ObjectPosition = GetOwner()->GetTransform().GetLocation().ToString();
-	UE_LOG(LogTemp, Warning, TEXT("%s is at position %s"), *ObjectName, *ObjectPosition);
 }
